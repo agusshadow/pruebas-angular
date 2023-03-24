@@ -1,0 +1,65 @@
+<!-- interpolacion de strings = {{}} -->
+
+<div>
+  <h1>Hola mi nombre es {{name}}</h1>
+  <p class="fondo">Tengo {{age}} anios</p>
+  <p>Nombre en mayuscula {{name.toUpperCase()}}</p>
+  <p>Mi edad + 10 = {{age + 10}}</p>
+  <img src={{img}} alt="imagen">
+</div>
+
+
+<!-- property binding  = [property]="value"-->
+
+<div>
+  <img [src]="img" alt="imagen">
+  <input type="text" [value]="name">
+  <button [disabled]="btnDisabled">Enviar</button>
+</div>
+
+
+<!-- event binding = (event)="function()"-->
+
+<div>
+  <button (click)="switch()">Cambiar valor</button>
+  <p>{{value}}</p>
+</div>
+
+
+<!-- data binding (enlace de doble via)-->
+<!-- [importante] se requiere importar el paquete en app.module -->
+
+<input type="text" [(ngModel)]="valueModel">
+<p>{{valueModel}}</p>
+
+
+<!-- *ngIf = *ngIf="condition" -->
+
+<p *ngIf="value; else elseBlock">Hola!, aparezco si apretas en el boton de arriba</p>
+<ng-template #elseBlock>
+  <p>Esta en false</p>
+</ng-template>
+
+
+<!-- *ngFor = *ngFor="let item of items" -->
+
+<ul>
+  <li *ngFor="let name of names">{{name}}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let name of names; index as i">{{i}} | {{name}}</li>
+</ul>
+
+<!-- interfaces typescript -->
+
+<ul>
+  <li *ngFor="let person of peopleArray">
+    <p>First Name: {{person.firstname}}</p>
+    <p>Last Name: {{person.lastname}}</p>
+    <span>Nickname: {{person.nickname}}</span>
+    <p>Age: {{person.age}}</p>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
