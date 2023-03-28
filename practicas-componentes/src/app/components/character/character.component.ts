@@ -4,11 +4,16 @@ import { Character } from '../../models/character.model'
 @Component({
   selector: 'app-character',
   templateUrl: './character.component.html',
-  styleUrls: ['./character.component.sass']
+  styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent {
 
   @Input() character: Character = {};
 
   constructor() { }
+
+  favorite() {
+    console.log('favorite');
+
+  }
 }

@@ -1,0 +1,22 @@
+
+//declaracion de variables
+$primary: green;
+$secondary: yellow;
+
+.character {
+  background-color: $primary;
+  margin: 10px 0;
+
+  &__body {
+    padding: 15px;
+  }
+
+  &__name {
+    color: $secondary;
+  }
+
+  &__species {
+    color: white;
+  }
+
+}

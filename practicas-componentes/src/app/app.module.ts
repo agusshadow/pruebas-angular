@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CharacterComponent } from './components/character/character.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ListFavoritesComponent } from './components/list-favorites/list-favorites.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharacterComponent,
-    NavbarComponent
+    NavbarComponent,
+    ListFavoritesComponent
   ],
   imports: [
     BrowserModule
