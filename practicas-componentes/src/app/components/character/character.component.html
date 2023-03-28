@@ -1,15 +1,13 @@
-<div class="col character">
+<div class="col character" [ngClass]="{ liked: like }">
   <div>
-    <img [src]="character.image" class="img-fluid" [alt]="character.name">
-  <div class="character__body">
+    <img [src]="character.image" class="img-fluid" [alt]="character.name" />
+    <div class="character__body">
       <h5 class="character__name">{{ character.name }}</h5>
       <p class="character__species">Species {{ character.species }}</p>
-      <a href="#" class="btn btn-danger character__btn" (click)="favorite()">
-        Like
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill ms-1" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-        </svg>
-      </a>
+      <app-btn-favorite
+        (addFavorite)="liked()"
+        [character]="character"
+      ></app-btn-favorite>
     </div>
   </div>
 </div>

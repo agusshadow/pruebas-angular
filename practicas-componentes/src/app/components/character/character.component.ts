@@ -10,10 +10,13 @@ export class CharacterComponent {
 
   @Input() character: Character = {};
 
+  like: boolean = false;
+
   constructor() { }
 
-  favorite() {
-    console.log('favorite');
-
+  liked() {
+    console.log('character liked');
+    this.like = true
   }
+
 }

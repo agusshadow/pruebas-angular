@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { Character } from '../../models/character.model'
 
 @Component({
@@ -6,12 +6,25 @@ import { Character } from '../../models/character.model'
   templateUrl: './list-favorites.component.html',
   styleUrls: ['./list-favorites.component.sass']
 })
-export class ListFavoritesComponent {
+export class ListFavoritesComponent implements OnChanges{
 
-  @Input() favorites: Character[] = [];
+  favorites: Character[] = [];
 
+  // el constructor corre antes del render
   constructor() {}
 
+  ngOnChanges() {
+    this.getLocalStorage()
+    console.log('cambio');
 
+  }
+
+  getLocalStorage() {
+
+    let favorites: Character[] = JSON.parse(localStorage.getItem('favorites') || '');
+    this.favorites = favorites
+    console.log();
+
+  }
 
 }
